@@ -9,13 +9,11 @@
 /* ================= FUNDO ================= */
 body {
     min-height: 100dvh;
-    /* viewport dinâmica (corrige mobile) */
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    /* margem visível nos cantos */
     color: #eaeaea;
     overflow: hidden;
 }
@@ -26,9 +24,7 @@ main {
     width: 100%;
     max-width: 520px;
 
-    /* 🔒 ALTURA ESTÁVEL E CENTRALIZADA */
     height: calc(100dvh - 2rem);
-    /* desconta padding do body */
     max-height: 680px;
     min-height: 560px;
 
@@ -47,13 +43,10 @@ form {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 0.75rem;
-    /* espaço entre input e botão */
 }
-
 
 form h1 {
     grid-column: 1 / -1;
-    /* ocupa a linha inteira */
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
@@ -61,8 +54,8 @@ form h1 {
     margin-bottom: 0.25rem;
 }
 
+/* ================= INPUT ================= */
 .task-name-input {
-    flex: 1;
     padding: 0.85rem;
     border-radius: 10px;
     border: 1px solid #2a2a2a;
@@ -76,7 +69,7 @@ form h1 {
     border-color: #4f8cff;
 }
 
-/* BOTÃO ADD */
+/* ================= BOTÃO ADD ================= */
 .add-task-button {
     padding: 0.85rem 1.2rem;
     background: linear-gradient(135deg, #4f8cff, #6a5cff);
@@ -136,11 +129,8 @@ form h1 {
 /* ================= LISTA ================= */
 #task-list {
     list-style: none;
-
-    /* 🔑 SOMENTE A LISTA ROLA */
     flex: 1;
     overflow-y: auto;
-
     padding-right: 0.3rem;
 }
 
@@ -242,27 +232,6 @@ form h1 {
     opacity: 0.8;
 }
 
-@keyframes checkOut {
-    0% {
-        background-color: #173d2a;
-        transform: scale(1);
-    }
-
-    60% {
-        background-color: #1f4d33;
-        transform: scale(0.98);
-    }
-
-    100% {
-        background-color: #1c1c1c;
-        transform: scale(1);
-    }
-}
-
-.task-box.unchecking {
-    animation: checkOut 0.25s ease-out forwards;
-}
-
 /* ================= SCROLL ================= */
 #task-list::-webkit-scrollbar {
     width: 6px;
@@ -278,12 +247,12 @@ form h1 {
 
     main {
         height: calc(100dvh - 2rem);
-        max-height: unset;
-        min-height: unset;
         padding: 1rem;
     }
 
+    /* 🔑 AQUI ESTÁ A CORREÇÃO REAL */
     form {
+        display: flex;
         flex-direction: column;
         gap: 0.75rem;
     }
@@ -308,7 +277,6 @@ form h1 {
 
 /* MOBILE MENOR */
 @media (max-width: 360px) {
-
     .task-box li {
         font-size: 1.15rem;
     }
