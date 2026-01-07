@@ -5,7 +5,7 @@ Aplicativo de lista de tarefas desenvolvido com **HTML, CSS e JavaScript puro**,
 O projeto permite criar, concluir e remover tarefas, mantendo os dados salvos no navegador através do `localStorage`.
 
 🔗 **Demo online:**  
-https://sgmaiate.github.io/todo-list/
+https://sgmaiate.github.io/to-do-list/
 
 ---
 
