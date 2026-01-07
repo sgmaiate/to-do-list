@@ -33,11 +33,14 @@ function createBox(taskName) { // Cria a "div" com "li" para inserir no HTML
     task.innerText = taskName.name
     if (taskName.check) {
         taskBox.classList.add("checked")
+        checkButton.setAttribute("aria-label", "Marcar tarefa como concluída")
+        removeButton.setAttribute("aria-label", "Remover tarefa")
     }
-    removeButton.innerText = "X"
-    taskBox.appendChild(checkButton)
+
+
 
     taskBox.appendChild(task)
+    taskBox.appendChild(checkButton)
     taskBox.appendChild(removeButton)
     taskList.appendChild(taskBox)
     removeButton.addEventListener("click", removeTask)
