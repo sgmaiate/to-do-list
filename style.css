@@ -44,9 +44,21 @@ main {
 
 /* ================= FORM ================= */
 form {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 0.75rem;
     /* espaço entre input e botão */
+}
+
+
+form h1 {
+    grid-column: 1 / -1;
+    /* ocupa a linha inteira */
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin-bottom: 0.25rem;
 }
 
 .task-name-input {
